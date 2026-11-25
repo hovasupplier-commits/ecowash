@@ -1,0 +1,22 @@
+{
+  "name": "ecowash",
+  "version": "1.0.0",
+  "description": "ECO WASH: filtro para aguas grises en 3D y maqueta interactiva de una casa sobre una isla flotante (three.js).",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "http-server . -p 5173 -c-1",
+    "build": "node scripts/build.mjs",
+    "preview": "npm run build && http-server dist -p 4173 -c-1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "http-server": "^14.1.1"
+  }
+}

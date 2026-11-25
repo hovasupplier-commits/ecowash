@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ECO WASH — Filtro para aguas grises</title>
+<meta name="description" content="ECO WASH: filtro para aguas grises en 3D y maqueta interactiva de una casa sobre una isla flotante.">
+<meta name="theme-color" content="#031a4a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c5 7 9 11 9 16a9 9 0 0 1-18 0c0-5 4-9 9-16z' fill='%231a6bff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#hero" aria-label="Ecowash — inicio"><span class="brand-logo" role="img" aria-hidden="true"></span></a>
+  <nav class="pill">
+    <a href="#hero" class="on">Inicio</a>
+    <a href="#parte2">Maqueta</a>
+  </nav>
+  <a class="cta-ghost" href="#parte2">Contacto</a>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <h1 class="t-top"><span>Agua gris,</span><span>de nuevo</span></h1>
+    <h2 class="t-bottom"><span>Limpia</span><span>y Renovada</span></h2>
+
+    <canvas id="stage" aria-label="Filtro ECO WASH en 3D, arrástralo para girarlo"></canvas>
+
+    <div class="copy">
+      <p>Filtro para aguas grises: retiene los residuos de agua jabonosa para que puedas reutilizarla.</p>
+      <button class="btn" id="spin">Girar filtro <i></i></button>
+    </div>
+
+    <div class="hint" id="hint"><span class="hand"></span>Arrástralo · gíralo · acércate</div>
+
+    <div class="spec">
+      <small>MODELO</small>
+      <b>ECO WASH · Acero inoxidable</b>
+    </div>
+    <a class="scroll" href="#parte2" aria-label="Ir a la segunda parte"><i></i></a>
+  </section>
+
+  <section id="parte2" class="part2">
+    <div class="sky" aria-hidden="true"></div>
+    <canvas id="island" aria-label="Maqueta 3D interactiva de una casa sobre una isla flotante"></canvas>
+    <div id="labels"></div>
+    <div class="p2-loading" role="status">Cargando maqueta…</div>
+
+    <div class="p2-head">
+      <small>MAQUETA INTERACTIVA</small>
+      <h2>Así trabaja ECO WASH<br>en tu casa</h2>
+    </div>
+
+    <aside class="flow-card" aria-live="polite">
+      <b>Recorrido del agua</b>
+      <ol>
+        <li><i style="--c:#dfe4e8"></i>La lavadora descarga agua jabonosa.</li>
+        <li><i style="--c:#9aa6b2"></i>El filtro ECO WASH, fijo en la pared, retiene los residuos.</li>
+        <li><i style="--c:#35b6ff"></i>El agua tratada sube por el tubo hasta el tanque de la azotea.</li>
+      </ol>
+    </aside>
+
+    <div class="p2-ui" role="toolbar" aria-label="Vistas de la maqueta">
+      <button data-go="general" class="on">Vista general</button>
+      <button data-go="front">Frente</button>
+      <button data-go="back">Atrás</button>
+      <button data-go="flow" class="primary">Ver funcionamiento</button>
+    </div>
+    <div class="p2-hint" id="p2hint">Arrastra para girar · rueda para acercar</div>
+    <a class="p2-up" href="#hero" aria-label="Volver al inicio"><i></i></a>
+  </section>
+</main>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
